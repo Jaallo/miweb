@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inicio de Sesión</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: url('Imagenes/playa-de-monsul.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 320px;
+    text-align: center;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+background: #0056b3;
+}
+</style>
+</head>
+    <body>
+        <div class="card">
+        <h2>Iniciar Sesión</h2>
+            <input type="email" id="email" placeholder="Correo electrónico" />
+            <button onclick="login()">Entrar</button>
+            <p id="mensaje"></p>
+            <p style="font-size:12px;">Si no tienes cuenta, créala <a href="crear_usuario.html">aquí</a>
+        </div>
+
+
+        <script>
+        function login() {
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje');
+
+            if (!email) {
+                mensaje.textContent = 'Por favor escribe un correo.';
+                mensaje.style.color = 'red';
+            return;
+            }
+
+        // Simulación de inicio de sesión
+        localStorage.setItem('usuario', email);
+            mensaje.textContent = 'Acceso concedido: ' + email;
+            mensaje.style.color = 'green';
+        }
+        </script>
+    </body>
+</html>
